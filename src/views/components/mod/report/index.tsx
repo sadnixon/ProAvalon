@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { hot } from 'react-hot-loader/root';
 import Swal from 'sweetalert2';
+
 import { ExpandableComponent } from '../../common/expandableComponent';
+import { VoteHistory } from '../../common/voteHistory';
 
 import { ReportEntryStyle } from './css';
 
@@ -212,7 +214,7 @@ function ReportEntry({ report, callbackOnResolve }: ReportEntryProps) {
       {report.roles}
 
       <h5>Vote History:</h5>
-      {report.voteHistory}
+      <VoteHistory voteHistoryString={report.voteHistory} />
     </div>
   );
 }
